@@ -12,11 +12,10 @@ namespace functions
             float[] nota3 = new float[10];
             float[] nota4 = new float[10];
             float[] medias = new float[10];
+
             string[] alunos = new string[10];
-            int aprovados = 0;
-            int reprovados = 0;
-            int totalReprovados = 0;
-            int totalAprovados = 0;
+            string[] aprovados = new string[10];
+            string[] reprovados = new string[10];
 
                 for(var i2 = 0 ; i2 < 10; i2++)
             {
@@ -35,13 +34,11 @@ namespace functions
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"O aluno {alunos[i2]} foi Aprovado!");
                     Console.ResetColor();
-                    totalAprovados = aprovados+1;
                 } else 
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"O aluno {alunos[i2]} foi reprovado!");
                     Console.ResetColor();
-                    totalReprovados = reprovados+1;
                 }
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -49,9 +46,6 @@ namespace functions
                 Console.ResetColor();
                
             }
-
-            Console.WriteLine($"O total de aprovados é {totalAprovados} e de reprovados é: {totalReprovados}");
-
             }
         }
  }
