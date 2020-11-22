@@ -14,10 +14,10 @@ namespace functions
             float[] medias = new float[10];
 
             string[] alunos = new string[10];
-            string[] aprovados = new string[10];
-            string[] reprovados = new string[10];
+            int aprovados = 0;
+            int reprovados = 0;
 
-                for(var i2 = 0 ; i2 < 10; i2++)
+            for(var i2 = 0 ; i2 < 10; i2++)
             {
                 Console.WriteLine($"Digite as 4 notas do(a) aluno(a): {alunos[i2]}");
                 alunos[i2] = Console.ReadLine();
@@ -34,11 +34,13 @@ namespace functions
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"O aluno {alunos[i2]} foi Aprovado!");
                     Console.ResetColor();
-                } else 
+                    aprovados = + 1;
+                } else if(medias[i2] < 7)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"O aluno {alunos[i2]} foi reprovado!");
                     Console.ResetColor();
+                    reprovados =  + 1;
                 }
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -46,6 +48,12 @@ namespace functions
                 Console.ResetColor();
                
             }
+                Console.ForegroundColor = ConsoleColor.Green;
+                System.Console.WriteLine($"Tivemos {aprovados} alunos aprovados!");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                System.Console.WriteLine($"Tivemos {reprovados} alunos reprovados!");
+                Console.ResetColor();
             }
         }
  }
