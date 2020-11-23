@@ -12,6 +12,7 @@ namespace functions
             float[] nota3 = new float[10];
             float[] nota4 = new float[10];
             float[] medias = new float[10];
+            float[] mediaGeral = new float[10];
 
             string[] alunos = new string[10];
             int aprovados = 0;
@@ -34,13 +35,13 @@ namespace functions
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"O aluno {alunos[i2]} foi Aprovado!");
                     Console.ResetColor();
-                    aprovados = + 1;
+                    aprovados = aprovados + 1;
                 } else if(medias[i2] < 7)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"O aluno {alunos[i2]} foi reprovado!");
                     Console.ResetColor();
-                    reprovados =  + 1;
+                    reprovados = reprovados + 1;
                 }
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -54,7 +55,18 @@ namespace functions
                 Console.ForegroundColor = ConsoleColor.Red;
                 System.Console.WriteLine($"Tivemos {reprovados} alunos reprovados!");
                 Console.ResetColor();
-            }
+
+
+                float calculoMedia(float a, float b, float c, float d, float e,float f,float g,float h,float i,float j)
+                {
+                    float calcularMedia = (a+b+c+d+e+f+g+h+i+j)/10;    
+                    return calcularMedia;
+                }
+
+                 Console.ForegroundColor = ConsoleColor.Yellow;
+                 System.Console.WriteLine($"A média geral da sala é: {calculoMedia(medias[0],medias[1],medias[2],medias[3],medias[4],medias[5],medias[6],medias[7],medias[8],medias[9])}");
+                 Console.ResetColor();
         }
  }
+}
 
